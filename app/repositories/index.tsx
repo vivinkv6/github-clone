@@ -51,7 +51,7 @@ function repositories() {
   }
 
   return (
-    <SafeAreaView style={{flex:1,marginTop:StatusBar.currentHeight,padding:20}} >
+    <SafeAreaView style={{flex:1,padding:20}} >
       <FlatList
         showsVerticalScrollIndicator
         data={repositories}

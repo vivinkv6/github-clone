@@ -56,7 +56,7 @@ function Organizations({profile}:ProfileProp) {
   useEffect(() => {
     fetchOrganizationCount();
     fetchStarsCount();
-  }, []);
+  }, [organization,star]);
 
   if (loading) {
     return <ActivityIndicator color="black" />;
@@ -102,6 +102,7 @@ function Organizations({profile}:ProfileProp) {
         <Text>{profile?.public_repos}</Text>
       </View>
       </Pressable>
+      <Pressable onPress={()=>router.navigate('/organizations')}>
       <View
         style={styles.container}
       >
@@ -124,6 +125,8 @@ function Organizations({profile}:ProfileProp) {
         </View>
         <Text>{organization}</Text>
       </View>
+      </Pressable>
+      <Pressable onPress={()=>router.navigate('/starred')}>
       <View
         style={styles.container}
       >
@@ -146,6 +149,7 @@ function Organizations({profile}:ProfileProp) {
         </View>
         <Text>{star}</Text>
       </View>
+      </Pressable>
     </View>
   );
 }

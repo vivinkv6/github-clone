@@ -69,7 +69,7 @@ function MoreInfo({profile}:ProfileProp) {
         }}
       >
         <Entypo name="linkedin" size={20} color="black" />
-        <Text style={{ fontWeight: "600" }}>{profile?.blog}</Text>
+        <Text style={{ fontWeight: "600",textDecorationStyle:'solid',textDecorationLine:'underline' }}>https://in.linkedin.com/in/vivin-k-v-8816ba291</Text>
       </View>
       <View
         style={{
@@ -80,7 +80,7 @@ function MoreInfo({profile}:ProfileProp) {
         }}
       >
         <Entypo name="instagram" size={24} color="black" />
-        <Text style={{ fontWeight: "600" }}>vivinkv.me</Text>
+        <Text style={{ fontWeight: "600",textDecorationLine:'underline',textDecorationStyle:'solid' }}>https://www.instagram.com/vivin_k.v_2002/</Text>
       </View>
       <View
         style={{

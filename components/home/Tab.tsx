@@ -58,14 +58,14 @@ function Tab() {
 
 const styles = StyleSheet.create({
   tabContainer: {
-    marginTop: 15,
+    marginTop: 20,
     height: 200,
     width: "100%",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10,
+    padding: 15,
   },
   tab: {
     display: "flex",

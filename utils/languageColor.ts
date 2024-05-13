@@ -24,7 +24,6 @@ export const languageColor = (language: string | undefined) => {
     case "EJS":
       return "#800151";
       break;
-
     default:
       return "#8092cf";
       break;
