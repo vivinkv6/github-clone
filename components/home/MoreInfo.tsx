@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Octicons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
 import { ProfileType } from "@/types/profile.type";
+import { router } from "expo-router";
 
 type ProfileProp={
     profile:ProfileType|null
@@ -58,7 +59,7 @@ function MoreInfo({profile}:ProfileProp) {
         }}
       >
         <Entypo name="link" size={24} color="black" />
-        <Text style={{ fontWeight: "600" }}>{profile?.blog}</Text>
+        <Text style={{ fontWeight: "600",textDecorationStyle:'solid',textDecorationLine:'underline' }}>{profile?.blog}</Text>
       </View>
       <View
         style={{
@@ -105,6 +106,7 @@ function MoreInfo({profile}:ProfileProp) {
           gap: 10,
         }}
       >
+        <Pressable onPress={()=>router.navigate('/followers')}>
         <View
           style={{
             display: "flex",
@@ -119,6 +121,8 @@ function MoreInfo({profile}:ProfileProp) {
             <Text style={{ fontWeight: "600", color: "gray" }}>followers</Text>
           </Text>
         </View>
+        </Pressable>
+        <Pressable onPress={()=>router.navigate('/following')}>
         <View
           style={{
             display: "flex",
@@ -133,6 +137,7 @@ function MoreInfo({profile}:ProfileProp) {
             <Text style={{ fontWeight: "600", color: "gray" }}>following</Text>
           </Text>
         </View>
+        </Pressable>
       </View>
       <View
         style={{

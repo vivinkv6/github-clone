@@ -51,88 +51,100 @@ function starred() {
   }
 
   return (
-    <SafeAreaView style={{flex:1,padding:20}} >
+    <SafeAreaView style={{ flex: 1, padding: 20 }}>
       <FlatList
         showsVerticalScrollIndicator
         data={starredRepo}
         renderItem={({ item }) => {
-          return(
+          return (
             <>
-             <View
-      style={{
-        gap: 10,
-        backgroundColor: "#e3e3e3",
-        padding: 10,
-        borderRadius: 10,
-        width: '100%',
-        height:'auto',
-      }}
-    >
-      <View style={{ display: "flex", flexDirection: "row", gap: 5 }}>
-        <Image
-          source={{uri:item?.owner.avatar_url}}
-          style={{
-            height: 20,
-            width: 20,
-            borderRadius: 50,
-            backgroundColor: "red",
-          }}
-        />
-        <Text style={{ color: "gray" }}>{item?.owner.login}</Text>
-      </View>
-      <Text style={{fontSize:20,fontWeight:'600'}}>{item?.name}</Text>
-      <Text style={{fontSize:14,fontWeight:'400',color:'gray',}}>{item?.description}</Text>
-      <View
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "flex-start",
-          gap: 10,
-        }}
-      >
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            gap: 10,
-          }}
-        >
-          <FontAwesome name="star" size={24} color="#f5db16" />
-          <Text
-            style={{
-              fontWeight: "500",
-              color: "gray",
-              fontSize: 17,
-              textAlignVertical: "center",
-            }}
-          >
-            {Math.floor(Math.random()*8)}
-          </Text>
-        </View>
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-          }}
-        >
-          <Entypo name="dot-single" size={40} color={languageColor(item?.language)} />
-          <Text
-            style={{
-              fontWeight: "500",
-              color: "gray",
-              fontSize: 17,
-              textAlignVertical: "center",
-            }}
-          >
-            {item?.language == null? 'README':item?.language}
-          </Text>
-        </View>
-      </View>
-    </View>
+              <View
+                style={{
+                  gap: 10,
+                  // backgroundColor: "#e3e3e3",
+                  padding: 10,
+                  borderRadius: 10,
+                  width: "100%",
+                  height: "auto",
+                  borderWidth: 1,
+                  borderColor: "black",
+                }}
+              >
+                <View style={{ display: "flex", flexDirection: "row", gap: 5 }}>
+                  <Image
+                    source={{ uri: item?.owner.avatar_url }}
+                    style={{
+                      height: 20,
+                      width: 20,
+                      borderRadius: 50,
+                      backgroundColor: "red",
+                    }}
+                  />
+                  <Text style={{ color: "gray" }}>{item?.owner.login}</Text>
+                </View>
+                <Text style={{ fontSize: 20, fontWeight: "600" }}>
+                  {item?.name}
+                </Text>
+                <Text
+                  style={{ fontSize: 14, fontWeight: "400", color: "gray" }}
+                >
+                  {item?.description}
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-start",
+                    gap: 10,
+                  }}
+                >
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: 10,
+                    }}
+                  >
+                    <FontAwesome name="star" size={24} color="#f5db16" />
+                    <Text
+                      style={{
+                        fontWeight: "500",
+                        color: "gray",
+                        fontSize: 17,
+                        textAlignVertical: "center",
+                      }}
+                    >
+                      {Math.floor(Math.random() * 8)}
+                    </Text>
+                  </View>
+                  <View
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Entypo
+                      name="dot-single"
+                      size={40}
+                      color={languageColor(item?.language)}
+                    />
+                    <Text
+                      style={{
+                        fontWeight: "500",
+                        color: "gray",
+                        fontSize: 17,
+                        textAlignVertical: "center",
+                      }}
+                    >
+                      {item?.language == null ? "README" : item?.language}
+                    </Text>
+                  </View>
+                </View>
+              </View>
             </>
-          )
+          );
         }}
         ItemSeparatorComponent={() => {
           return <View style={{ height: 20 }} />;

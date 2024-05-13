@@ -51,9 +51,7 @@ function repositories() {
   }
 
   return (
-    <SafeAreaView
-      style={{ flex: 1, padding: 20 }}
-    >
+    <SafeAreaView style={{ flex: 1, padding: 20 }}>
       <FlatList
         showsVerticalScrollIndicator
         data={organizations}
@@ -64,14 +62,16 @@ function repositories() {
                 key={item.id}
                 style={{
                   gap: 10,
-                  backgroundColor: "#e3e3e3",
+                  // backgroundColor: "#e3e3e3",
                   padding: 10,
                   borderRadius: 10,
                   width: "100%",
                   height: "auto",
-                  display:'flex',
-                  flexDirection:'row',
-                  alignItems:'center'
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  borderWidth: 1,
+                  borderColor: "black",
                 }}
               >
                 <View style={{ display: "flex", flexDirection: "row", gap: 5 }}>

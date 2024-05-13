@@ -75,6 +75,15 @@ function RootLayoutNav() {
           name="starred"
           options={{ title: "vivinkv6/Starred" }}
         />
+         <Stack.Screen
+          name="followers"
+          options={{ title: "vivinkv6/Followers" }}
+        />
+         <Stack.Screen
+          name="following"
+          options={{ title: "vivinkv6/Following" }}
+        />
+
       </Stack>
     </ThemeProvider>
   );

@@ -4,24 +4,26 @@ import { Entypo } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { RepoType } from "@/types/repo.type";
 import { languageColor } from "@/utils/languageColor";
-type RepoProp={
-    repo:RepoType|null
-}
-function RepoCard({repo}:RepoProp) {
+type RepoProp = {
+  repo: RepoType | null;
+};
+function RepoCard({ repo }: RepoProp) {
   return (
     <View
       style={{
         gap: 10,
-        backgroundColor: "#e3e3e3",
+        // backgroundColor: "#e3e3e3",
         padding: 10,
+        borderWidth: 1,
+        borderColor: "black",
         borderRadius: 10,
         width: 280,
-        height:'auto',
+        height: "auto",
       }}
     >
       <View style={{ display: "flex", flexDirection: "row", gap: 5 }}>
         <Image
-          source={{uri:repo?.owner.avatar_url}}
+          source={{ uri: repo?.owner.avatar_url }}
           style={{
             height: 20,
             width: 20,
@@ -31,8 +33,12 @@ function RepoCard({repo}:RepoProp) {
         />
         <Text style={{ color: "gray" }}>{repo?.owner.login}</Text>
       </View>
-      <Text style={{fontSize:20,fontWeight:'600'}}>{repo?.name}</Text>
-      <Text style={{fontSize:14,fontWeight:'400',color:'gray',}}>{repo?.description?.length>30? repo?.description?.slice(0,30)+'...':repo?.description}</Text>
+      <Text style={{ fontSize: 20, fontWeight: "600" }}>{repo?.name}</Text>
+      <Text style={{ fontSize: 14, fontWeight: "400" }}>
+        {repo?.description?.length > 30
+          ? repo?.description?.slice(0, 30) + "..."
+          : repo?.description}
+      </Text>
       <View
         style={{
           display: "flex",
@@ -58,7 +64,7 @@ function RepoCard({repo}:RepoProp) {
               textAlignVertical: "center",
             }}
           >
-            {Math.floor(Math.random()*8)}
+            {Math.floor(Math.random() * 8)}
           </Text>
         </View>
         <View
@@ -68,7 +74,11 @@ function RepoCard({repo}:RepoProp) {
             alignItems: "center",
           }}
         >
-          <Entypo name="dot-single" size={40} color={languageColor(repo?.language)} />
+          <Entypo
+            name="dot-single"
+            size={40}
+            color={languageColor(repo?.language)}
+          />
           <Text
             style={{
               fontWeight: "500",
@@ -77,7 +87,7 @@ function RepoCard({repo}:RepoProp) {
               textAlignVertical: "center",
             }}
           >
-            {repo?.language== null? 'README':repo?.language}
+            {repo?.language == null ? "README" : repo?.language}
           </Text>
         </View>
       </View>
