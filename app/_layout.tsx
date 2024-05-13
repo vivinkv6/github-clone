@@ -6,6 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { Image } from 'react-native';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -51,7 +52,11 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name='repositories' options={{headerShown:false}}/>
+        <Stack.Screen name='repositories' options={{title:'vivinkv6/repositories',headerLeft:()=>{
+          return(
+            <Image source={require('@/assets/images/icon.png')} style={{borderRadius:50,height:20,width:20}}/>
+          )
+        }}}/>
       </Stack>
     </ThemeProvider>
   );

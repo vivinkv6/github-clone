@@ -3,6 +3,7 @@ import { View, Image, Text } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { RepoType } from "@/types/repo.type";
+import { languageColor } from "@/utils/languageColor";
 type RepoProp={
     repo:RepoType|null
 }
@@ -15,7 +16,7 @@ function RepoCard({repo}:RepoProp) {
         padding: 10,
         borderRadius: 10,
         width: 280,
-        height:'auto'
+        height:'auto',
       }}
     >
       <View style={{ display: "flex", flexDirection: "row", gap: 5 }}>
@@ -30,8 +31,8 @@ function RepoCard({repo}:RepoProp) {
         />
         <Text style={{ color: "gray" }}>{repo?.owner.login}</Text>
       </View>
-      <Text>{repo?.name}</Text>
-      <Text>{repo?.description}</Text>
+      <Text style={{fontSize:20,fontWeight:'600'}}>{repo?.name}</Text>
+      <Text style={{fontSize:14,fontWeight:'400',color:'gray',}}>{repo?.description?.length>30? repo?.description?.slice(0,30)+'...':repo?.description}</Text>
       <View
         style={{
           display: "flex",
@@ -67,7 +68,7 @@ function RepoCard({repo}:RepoProp) {
             alignItems: "center",
           }}
         >
-          <Entypo name="dot-single" size={40} color={"#f5db16"} />
+          <Entypo name="dot-single" size={40} color={languageColor(repo?.language)} />
           <Text
             style={{
               fontWeight: "500",
@@ -76,7 +77,7 @@ function RepoCard({repo}:RepoProp) {
               textAlignVertical: "center",
             }}
           >
-            {repo?.language}
+            {repo?.language== null? 'README':repo?.language}
           </Text>
         </View>
       </View>

@@ -76,7 +76,7 @@ function Organizations({profile}:ProfileProp) {
         marginBottom: 50,
       }}
     >
-         <Pressable onPress={()=>router.navigate('respositories')}>
+         <Pressable onPress={()=>router.navigate('repositories')}>
       <View
         style={styles.container}
       >

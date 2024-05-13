@@ -44,7 +44,7 @@ function Repo() {
   }
 
   return (
-    <ScrollView showsVerticalScrollIndicator style={{ marginTop: 20 }}>
+    <ScrollView showsVerticalScrollIndicator  style={{ marginTop: 20 }}>
       <View
         style={{
           display: "flex",
@@ -57,7 +57,7 @@ function Repo() {
         <FontAwesome name="star-o" size={24} color="gray" />
         <Text style={{ fontWeight: "600", fontSize: 16 }}>Popular</Text>
       </View>
-      <ScrollView horizontal>
+      <View>
         <View
           style={{
             gap: 20,
@@ -78,7 +78,7 @@ function Repo() {
           />
           
         </View>
-      </ScrollView>
+      </View>
     </ScrollView>
   );
 }

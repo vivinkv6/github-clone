@@ -15,22 +15,22 @@ import {
 } from "react-native";
 
 function repositories() {
-  const [repositories, setRepositories] = useState<RepoType[] | null>(null);
+  const [organizations, setOrganizations] = useState<RepoType[] | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
 
-  const fetchRepo = async () => {
+  const fetchOrgs = async () => {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://api.github.com/users/vivinkv6/repos"
+        "https://api.github.com/users/vivinkv6/orgs"
       );
       if (!response?.ok) {
         return;
       }
       const data = await response.json();
       console.log(data.length);
-      setRepositories(data);
+      setOrganizations(data);
       setLoading(false);
     } catch (err) {
       setError("SomeThing Went Wrong Please Try again Later");
@@ -40,7 +40,7 @@ function repositories() {
   };
 
   useEffect(() => {
-    fetchRepo();
+    fetchOrgs();
   }, []);
 
   if (loading) {
@@ -54,7 +54,7 @@ function repositories() {
     <SafeAreaView style={{flex:1,marginTop:StatusBar.currentHeight,padding:20}} >
       <FlatList
         showsVerticalScrollIndicator
-        data={repositories}
+        data={organizations}
         renderItem={({ item }) => {
           return(
             <>
@@ -135,7 +135,7 @@ function repositories() {
           )
         }}
         ItemSeparatorComponent={() => {
-          return <View style={{ height: 20 }} />;
+          return <View style={{ height: 10 }} />;
         }}
       />
     </SafeAreaView>
@@ -143,3 +143,4 @@ function repositories() {
 }
 
 export default repositories;
+
