@@ -115,7 +115,7 @@ function starred() {
                         textAlignVertical: "center",
                       }}
                     >
-                      {Math.floor(Math.random() * 8)}
+                      {item?.stargazers_count}
                     </Text>
                   </View>
                   <View

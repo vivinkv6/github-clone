@@ -119,20 +119,29 @@ function Repository() {
       </View>
       </View>
 
-      <View style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      <View style={{ display: "flex", flexDirection: "column", gap: 20,marginTop:20 }}>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            padding:10
+            paddingHorizontal: 20,
+            alignItems:'center'
           }}
         >
-          <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-            <FontAwesome5 name="dot-circle" size={24} color="black" />
-            <Text>Issues</Text>
+          <View style={{ display: "flex", flexDirection: "row",alignItems:'center', gap: 10 }}>
+            <FontAwesome5 name="dot-circle"  size={28}
+            color="white"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 5,
+              padding: 5,
+              backgroundColor: "#22c759",
+            }} />
+            <Text style={{fontSize:18,fontWeight:'500'}}>Issues</Text>
           </View>
-          <Text>{repository?.open_issues_count}</Text>
+          <Text style={{fontSize:15,fontWeight:'400'}}>{repository?.open_issues_count}</Text>
         </View>
 
         <View
@@ -140,14 +149,22 @@ function Repository() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            padding: 10,
+            paddingHorizontal: 20,
           }}
         >
-          <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-            <Octicons name="git-pull-request" size={24} color="black" />
-            <Text>Pull Requests</Text>
+          <View style={{ display: "flex", flexDirection: "row",alignItems:'center', gap: 10 }}>
+            <Octicons name="git-pull-request"  size={28}
+            color="white"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 5,
+              padding: 5,
+              backgroundColor: "#2456c9",
+            }} />
+            <Text style={{fontSize:18,fontWeight:'500'}}>Pull Requests</Text>
           </View>
-          <Text>0</Text>
+          <Text style={{fontSize:15,fontWeight:'400'}}>0</Text>
         </View>
 
         <View
@@ -155,42 +172,66 @@ function Repository() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            padding: 10,
+            paddingHorizontal: 20,
           }}
         >
-          <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-            <AntDesign name="playcircleo" size={24} color="black" />
-            <Text>Actions</Text>
+          <View style={{ display: "flex", flexDirection: "row",alignItems:'center', gap: 10 }}>
+            <AntDesign name="playcircleo"  size={28}
+            color="white"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 5,
+              padding: 5,
+              backgroundColor: "#d5db18",
+            }} />
+            <Text style={{fontSize:18,fontWeight:'500'}}>Actions</Text>
           </View>
-          <Text>0</Text>
+          <Text style={{fontSize:15,fontWeight:'400'}}>0</Text>
         </View>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            padding: 10,
+            paddingHorizontal: 20,
           }}
         >
-          <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-            <Ionicons name="people" size={24} color="black" />
-            <Text>Contributors</Text>
+          <View style={{ display: "flex", flexDirection: "row",alignItems:'center', gap: 10 }}>
+            <Ionicons name="people"  size={28}
+            color="white"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 5,
+              padding: 5,
+              backgroundColor: "#ed8115",
+            }} />
+            <Text style={{fontSize:18,fontWeight:'500'}}>Contributors</Text>
           </View>
-          <Text>1</Text>
+          <Text style={{fontSize:15,fontWeight:'400'}}>1</Text>
         </View>
         <View
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
-            padding: 10,
+            paddingHorizontal: 20,
           }}
         >
-          <View style={{ display: "flex", flexDirection: "row", gap: 10 }}>
-            <Ionicons name="eye-outline" size={24} color="black" />
-            <Text>Watchers</Text>
+          <View style={{ display: "flex", flexDirection: "row",alignItems:'center', gap: 10 }}>
+            <Ionicons name="eye-outline" size={28}
+            color="white"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 5,
+              padding: 5,
+              backgroundColor: "#d5db18",
+            }} />
+            <Text style={{fontSize:18,fontWeight:'500'}}>Watchers</Text>
           </View>
-          <Text>{repository?.watchers_count}</Text>
+          <Text style={{fontSize:15,fontWeight:'400'}}>{repository?.watchers_count}</Text>
         </View>
       </View>
       <Project name={repository?.name}/>

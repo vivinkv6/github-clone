@@ -97,7 +97,7 @@ function RootLayoutNav() {
                   <Entypo
                     name="dots-three-vertical"
                     size={24}
-                    color="#0e48cf"
+                    color="black"
                   />
                 </View>
               );
@@ -118,7 +118,7 @@ function RootLayoutNav() {
                   <Entypo
                     name="dots-three-vertical"
                     size={24}
-                    color="#0e48cf"
+                    color="black"
                   />
                 </View>
               );

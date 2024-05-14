@@ -46,7 +46,7 @@ function files() {
     Alert.alert("Error", error);
   }
   return (
-    <>
+    <View style={{padding:20}}>
       <FlatList
         data={files}
         renderItem={({ item }) => {
@@ -57,7 +57,8 @@ function files() {
                 flexDirection: "row",
                 justifyContent: "flex-start",
                 alignItems: "center",
-               gap: 20,
+               gap: 10,
+               
               }}
             >
               {item?.type == "dir" ? (
@@ -79,7 +80,7 @@ function files() {
           )
         }}
       />
-    </>
+    </View>
   );
 }
 
