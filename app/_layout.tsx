@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 import { useColorScheme } from "@/components/useColorScheme";
 import { Image, View } from "react-native";
-import { AntDesign, Entypo } from "@expo/vector-icons";
+import { AntDesign, Entypo, Feather } from "@expo/vector-icons";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -87,6 +87,42 @@ function RootLayoutNav() {
           name="repositories/[repo]/files"
           options={{
             title: "Files",
+            headerRight: () => {
+              return (
+                <View
+                  style={{ display: "flex", flexDirection: "row", gap: 20 }}
+                >
+                 <Feather name="search" size={24} color="black" />
+                 <Feather name="share-2" size={24} color="black" />
+                  <Entypo
+                    name="dots-three-vertical"
+                    size={24}
+                    color="#0e48cf"
+                  />
+                </View>
+              );
+            },
+          }}
+        />
+          <Stack.Screen
+          name="repositories/[repo]/commits"
+          options={{
+            title: "Commits",
+            headerRight: () => {
+              return (
+                <View
+                  style={{ display: "flex", flexDirection: "row", gap: 20 }}
+                >
+                 <Feather name="search" size={24} color="black" />
+                 <Feather name="share-2" size={24} color="black" />
+                  <Entypo
+                    name="dots-three-vertical"
+                    size={24}
+                    color="#0e48cf"
+                  />
+                </View>
+              );
+            },
           }}
         />
         <Stack.Screen

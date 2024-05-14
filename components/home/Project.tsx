@@ -1,9 +1,13 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import { router } from "expo-router";
 
-function Project() {
+type RepoNameProp={
+  name:string|undefined
+}
+function Project({name}:RepoNameProp) {
   return (
     <View style={{padding: 20,display:'flex',flexDirection:'column',gap:10}}>
       <View
@@ -23,6 +27,7 @@ function Project() {
           CHANGE BRANCH
         </Text>
       </View>
+      <Pressable onPress={()=>router.navigate(`/repositories/${name}/files`)}>
       <View
         style={{
           display: "flex",
@@ -35,6 +40,8 @@ function Project() {
         <FontAwesome name="file-code-o" size={30} color="black" style={{backgroundColor:'#d7d7d9',padding:7,borderRadius:7}}/>
         <Text style={{fontWeight:'500',fontSize:18}}>Code</Text>
       </View>
+      </Pressable>
+      <Pressable onPress={()=>router.navigate(`/repositories/${name}/commits`)}>
       <View
         style={{
           display: "flex",
@@ -47,6 +54,7 @@ function Project() {
         <Ionicons name="git-commit-outline" size={30} color="black" style={{backgroundColor:'#d7d7d9',padding:7,borderRadius:7}} />
         <Text style={{fontWeight:'500',fontSize:18}}>Commits</Text>
       </View>
+      </Pressable>
     </View>
   );
 }

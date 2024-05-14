@@ -193,7 +193,7 @@ function Repository() {
           <Text>{repository?.watchers_count}</Text>
         </View>
       </View>
-      <Project />
+      <Project name={repository?.name}/>
     </>
   );
 }
