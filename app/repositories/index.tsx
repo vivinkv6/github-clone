@@ -2,12 +2,14 @@ import RepoCard from "@/components/home/RepoCard";
 import { RepoType } from "@/types/repo.type";
 import { languageColor } from "@/utils/languageColor";
 import { Entypo, FontAwesome } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Alert,
   FlatList,
   Image,
+  Pressable,
   SafeAreaView,
   StatusBar,
   Text,
@@ -57,7 +59,7 @@ function repositories() {
         data={repositories}
         renderItem={({ item }) => {
           return (
-            <>
+            <Pressable onPress={()=>router.navigate(`/repositories/${item?.name}`)}>
               <View
                 style={{
                   gap: 10,
@@ -115,7 +117,7 @@ function repositories() {
                         textAlignVertical: "center",
                       }}
                     >
-                      {Math.floor(Math.random() * 8)}
+                      {item?.stargazers_count}
                     </Text>
                   </View>
                   <View
@@ -143,7 +145,7 @@ function repositories() {
                   </View>
                 </View>
               </View>
-            </>
+            </Pressable>
           );
         }}
         ItemSeparatorComponent={() => {

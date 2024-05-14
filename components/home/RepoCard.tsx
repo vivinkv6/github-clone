@@ -1,14 +1,16 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Pressable } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { RepoType } from "@/types/repo.type";
 import { languageColor } from "@/utils/languageColor";
+import { router } from "expo-router";
 type RepoProp = {
   repo: RepoType | null;
 };
 function RepoCard({ repo }: RepoProp) {
   return (
+    <Pressable onPress={()=>router.navigate(`/repositories/${repo?.name}`)}>
     <View
       style={{
         gap: 10,
@@ -64,7 +66,7 @@ function RepoCard({ repo }: RepoProp) {
               textAlignVertical: "center",
             }}
           >
-            {Math.floor(Math.random() * 8)}
+            {repo?.stargazers_count}
           </Text>
         </View>
         <View
@@ -92,6 +94,7 @@ function RepoCard({ repo }: RepoProp) {
         </View>
       </View>
     </View>
+    </Pressable>
   );
 }
 

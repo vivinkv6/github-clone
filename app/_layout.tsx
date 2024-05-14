@@ -10,7 +10,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
 import { useColorScheme } from "@/components/useColorScheme";
-import { Image } from "react-native";
+import { Image, View } from "react-native";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -60,30 +61,47 @@ function RootLayoutNav() {
           name="repositories/index"
           options={{
             title: "vivinkv6/repositories",
-            
           }}
         />
         <Stack.Screen
-          name="repositories/[repo]"
-          options={{ title: "Repository" }}
+          name="repositories/[repo]/index"
+          options={{
+            title: "",
+            headerRight: () => {
+              return (
+                <View
+                  style={{ display: "flex", flexDirection: "row", gap: 20 }}
+                >
+                  <AntDesign name="pluscircleo" size={24} color="#0e48cf" />
+                  <Entypo
+                    name="dots-three-vertical"
+                    size={24}
+                    color="#0e48cf"
+                  />
+                </View>
+              );
+            },
+          }}
+        />
+          <Stack.Screen
+          name="repositories/[repo]/files"
+          options={{
+            title: "Files",
+          }}
         />
         <Stack.Screen
           name="organizations"
           options={{ title: "vivinkv6/Organizations" }}
         />
+        <Stack.Screen name="starred" options={{ title: "vivinkv6/Starred" }} />
         <Stack.Screen
-          name="starred"
-          options={{ title: "vivinkv6/Starred" }}
-        />
-         <Stack.Screen
           name="followers"
           options={{ title: "vivinkv6/Followers" }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="following"
           options={{ title: "vivinkv6/Following" }}
         />
-
       </Stack>
     </ThemeProvider>
   );
